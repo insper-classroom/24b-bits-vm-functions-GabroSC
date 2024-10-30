@@ -1,0 +1,36 @@
+function div 0
+    push constant 0
+    pop temp 2
+    push constant 0
+    push argument 1
+    eq
+    if-goto end
+
+    label loop
+    push argument 0
+    push constant 0
+    eq
+    if-goto end
+    push argument 0
+    push constant 0
+    lt
+    if-goto negative
+    push argument 0
+    push argument 1
+    sub
+    pop argument 0
+    push temp 2
+    push constant 1
+    add
+    pop temp 2
+    goto loop
+
+    label negative
+    push temp 2
+    push constant 1
+    sub
+    pop temp 2
+    
+    label end
+    push temp 2
+    return
