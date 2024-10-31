@@ -78,23 +78,39 @@ def test_div_0():
 
 
 @pytest.mark.telemetry_files(source("2-div/div.vm"))
-def test_div_15_5():
-    ram = init_ram()
 
-    val = 15 // 5
-    tst = {SP: STACK, TEMP[1]: val}
-    assert vm_test("2-div", ram, tst, 50000)
+def test_div_15_5():
+
+   ram = init_ram()
+
+   ram[TEMP[0]] = 6
+
+   ram[TEMP[1]] = 3
+
+   val = 6 // 3
+
+   tst = {SP: STACK, TEMP[2]: val}
+
+   assert vm_test("2-div", ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("3-pow/pow.vm"))
+
 def test_pow_0():
-    ram = init_ram()
-    x = 2
-    y = 0
-    ram[TEMP[0]] = x
-    ram[TEMP[1]] = y
-    tst = {SP: STACK, TEMP[2]: x**y}
-    assert vm_test("3-pow", ram, tst, 500000)
+
+   ram = init_ram()
+
+   x = 2
+
+   y = 0
+
+   ram[TEMP[0]] = x
+
+   ram[TEMP[1]] = y
+
+   tst = {SP: STACK, TEMP[2]: x**y}
+
+   assert vm_test("3-pow", ram, tst, 500000)
 
 
 @pytest.mark.telemetry_files(source("3-pow/pow.vm"))

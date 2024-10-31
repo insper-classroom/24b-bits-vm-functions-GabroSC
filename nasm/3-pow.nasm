@@ -184,7 +184,7 @@ movw (%A),%D
 incw %D
 movw %D,(%A)
 ; chamada de funcao: mult
-leaw $mult-ret-29310133,%A
+leaw $mult-ret-10213479,%A
 movw %A,%D
 leaw $SP,%A
 movw (%A),%A
@@ -243,7 +243,7 @@ movw %D,(%A)
 leaw $mult,%A
 jmp
 nop
-mult-ret-29310133:
+mult-ret-10213479:
 ;; pop argument 0 - 13
 leaw $SP,%A
 movw (%A),%D
@@ -817,7 +817,7 @@ movw (%A),%D
 incw %D
 movw %D,(%A)
 ; chamada de funcao: pow
-leaw $pow-ret-13092605,%A
+leaw $pow-ret-24829955,%A
 movw %A,%D
 leaw $SP,%A
 movw (%A),%A
@@ -876,7 +876,7 @@ movw %D,(%A)
 leaw $pow,%A
 jmp
 nop
-pow-ret-13092605:
+pow-ret-24829955:
 ;; pop temp 2 - 42
 leaw $SP,%A
 movw (%A),%D
