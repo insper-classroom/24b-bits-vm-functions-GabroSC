@@ -1,3 +1,28 @@
 function isqrt 2
+    push constant 0
+    pop temp 1
+
+    label loop
+    push temp 1
+    push constant 1
+    add
+    push temp 1
+    push constant 1
+    add
+    call mult 2
+    push argument 0
+    gt
+    if-goto fim
+    push constant 1
+    push temp 1
+    add
+    pop temp 1
+    goto loop
+
+    label fim
+    push temp 1
+    return
+
+
 
 
